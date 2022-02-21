@@ -10,9 +10,9 @@ def index():
 def login():
     return render_template('login.html')
 
-# @app.route('/home')
-# def home():
-#     return render_template('index.html')
+@app.route('/home')
+def home():
+    return render_template('index.html')
 
 @app.route('/register')
 def register():
