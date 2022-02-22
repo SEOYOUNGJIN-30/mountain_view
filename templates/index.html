@@ -1,24 +1,44 @@
-<!doctype html>
-<html lang="ko">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>카카오맵테스트</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<!--    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">-->
-    <link rel="stylesheet" href="/static/css/index.css">
-    <script rel="script" src="/static/js/jquery-3.6.0.min.js"></script>
+    <!--    폰트-->
+    <link href="https://fonts.googleapis.com/css2?family=Dongle&family=Poor+Story&display=swap" rel="stylesheet">
+
+    <!--    카카오맵 api-->
+    <script type="text/javascript"
+            src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0d9d093d51b30a990dd9be3a96f630ff&libraries=services,clusterer,drawing"></script>
 
 
-    <title>test</title>
+    <link rel="stylesheet" href="/static/css/test.css"/>
+    <script rel="script" src="/static/js/map.js"></script>
+
 </head>
 <body>
-    <div id="test">jQuery 테스트</div>
+<div class="main-container flex-row" style="justify-content: start!important;">
+    <div class="side-navi flex-column">
+        <div class="flex-row">
+            목록 첫번째
+        </div>
+        <div class="flex-row">
+            목록 두번째
+        </div>
+        <div class="flex-row">
+            목록 세번째
+        </div>
 
+        <button class="positive-btn">로그인</button>
+    </div>
+    <div class="map-container flex-column">
+        <h1>Mountain View</h1>
+        <div id="map" style="width:1200px;height:800px;"></div>
+    </div>
+</div>
 
-
-    <!-- JQuery 사용자 지정 스크립트 -->
 <script rel="script" src="/static/js/script.js"></script>
+
 </body>
 </html>
