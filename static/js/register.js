@@ -20,7 +20,7 @@ function checkValid(check) {
         str = null;
     }
 
-    if(str === null) {
+    if (str === null) {
         return false;
     } else {
         return true;
@@ -42,7 +42,7 @@ function checkPasswordValid(check) {
         str = null;
     }
 
-    if(str === null) {
+    if (str === null) {
         return false;
     } else {
         return true;
@@ -51,26 +51,18 @@ function checkPasswordValid(check) {
 
 
 function checkId() {
-
     const checkId = $('#userId').val()
     const isValid = checkValid(checkId)
-    if(!isValid) return;
+    if (!isValid) return;
 
     $.ajax({
         type: 'POST',
         url: '/register/checkDup',
         data: {id_give: checkId},
         success: function (response) {
-            alert(response['msg'])
-            if(response['msg'] !== "이미 존재하는 아이디 입니다!!") {
-                // "아이디 중복확인 완료" 메세지 보이게하기
-                const showText = document.getElementById("checkDuplicate")
-                showText.style.visibility = "visible";
-
-                // 중복확인 완료시 더이상 수정하지 못하게 변경
-                $('#userId').attr("readonly", true)
-                $('#userId').css({"color": "#d3d3d3"})
-
+            const showText = document.getElementById("checkDuplicate")
+            $('#checkDuplicate').text(response['msg']);
+            if (response['msg'] !== "이미 존재하는 아이디 입니다!!") {
                 // 아이디 중복확인 후 비밀번호로 포커스 이동
                 $('#userPassword').focus()
             }
@@ -84,7 +76,7 @@ function checkPassword() {
     const secondPassword = $('#checkPassword').val()
 
     const isValid = checkPasswordValid(firstPassword)
-    if(!isValid) {
+    if (!isValid) {
         // 비밀번호 유효성검사에 걸러졌을때, 값을 비우고 다시 커서 옮김
         $('#userPassword').val("")
         $('#checkPassword').val("")
@@ -92,7 +84,7 @@ function checkPassword() {
         return;
     }
 
-    if(firstPassword === secondPassword) {
+    if (firstPassword === secondPassword) {
         // "비밀번호가 일치합니다" 메세지 보이게하기
         const showText = document.getElementById("checkSamePassword")
         showText.style.visibility = "visible";
@@ -121,7 +113,7 @@ function register() {
     const userNickname = $('#userNickname').val()
 
     // 닉네임에 값을 넣지 않았을때
-    if(userNickname === "") {
+    if (userNickname === "") {
         alert("닉네임을 입력하세요!")
         $('#userNickname').focus();
         return;
@@ -137,7 +129,7 @@ function register() {
         type: "POST",
         url: "/register/insertDB",
         data: {id_give: userId, password_give: userPassword, age_give: userAge, nickname_give: userNickname},
-        success: function(response) {
+        success: function (response) {
             alert(response['msg'])
 
             // 로그인 페이지로 이동

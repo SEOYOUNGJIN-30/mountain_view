@@ -1,20 +1,28 @@
-body {
-    background-color: #d3d3d3;
+:root[color-theme='light'] {
+    --background: #fff;
+    --dark-background: #fdfdfd;
+    --color: #000;
+    --warning: #f00;
+}
+
+:root[color-theme='dark'] {
+    --background: #1e1e1e;
+    --dark-background: #1b1b1b;
+    --color: #fff;
+    --warning: #f00;
 }
 
 .login-card {
     max-width: 600px;
     width: 100%;
-    max-height: 80vh;
-    height: 100%;
-    background: white;
-    border-radius: 20px;
+    background: var(--background);
     padding: 50px;
+    color: var(--color);
 }
 
 .login-form {
-    width: 80%;
-
+    max-width: 300px;
+    width: 100%;
 }
 
 .input-box {
@@ -23,11 +31,12 @@ body {
 }
 
 .input-box > input {
-    background: transparent;
     border: none;
-    border-bottom: solid 1px black;
-    padding: 20px 0px 5px 0px;
-    font-size: 14pt;
+    border-bottom: solid 1px gray;
+    padding: 20px 0 5px 0;
+    background-color: var(--background);
+    color: var(--color);
+    font-size: 16px;
     max-width: 500px;
     width: 100%;
 }
@@ -37,22 +46,22 @@ input::placeholder{
 }
 
 input:placeholder-shown + label{
-    color: gray;
-    font-size: 14pt;
-    top: 15px;
+    color: var(--color);
+    font-size: 16px;
+    top: 16px;
 }
 
 input:focus + label, label {
     color: gray;
-    font-size: 10pt;
+    font-size: 12px;
     pointer-events: none;
     position: absolute;
-    left: 0px;
-    top: 0px;
-    transition: all 1s ease;
-    -webkit-transition: all .2s ease;
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
+    left: 0;
+    top: 0;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
 }
 
 input:focus, input:not(:placeholder-shown) {
@@ -60,16 +69,22 @@ input:focus, input:not(:placeholder-shown) {
     outline: none;
 }
 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
 .login-etc {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 30px 20px;
+    margin: 30px 0;
 }
 
 .register-text {
-    visibility: hidden;
-    color: gray;
+    color: red;
     font-size: 14px;
 }

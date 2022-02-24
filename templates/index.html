@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko">
+<html lang="ko" color-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -9,35 +9,56 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Dongle&family=Poor+Story&display=swap" rel="stylesheet">
 
-<!--    CSS -->
+    <!--    CSS -->
     <link rel="stylesheet" href="/static/css/index.css">
-<!--    Jquery -->
+    <!--    Jquery -->
     <script src="/static/js/jquery-3.6.0.min.js"></script>
-<!--    Kakao Map -->
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=eca33835a13018a6c326772b1661cc3e&libraries=services"></script>
-
+    <!--    Kakao Map -->
+    <script type="text/javascript"
+            src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0d9d093d51b30a990dd9be3a96f630ff&libraries=services,clusterer,drawing"></script>
 </head>
 <body>
 <div class="main-container flex-row">
     <div class="side-navi flex-column">
+        <a href="/" class="logo">MountainView</a>
         <div class="flex-row">
-            목록 첫번째
+            근처 산 찾기
         </div>
         <div class="flex-row">
-            목록 두번째
+            지역별 산 찾기(드롭다운)
         </div>
         <div class="flex-row">
-            목록 세번째
+            마이페이지
         </div>
-        <a href="login"><button class="positive-btn">로그인</button></a>
+        <a href="login">
+            <button class="positive-btn">로그인</button>
+        </a>
     </div>
+    <div class="main-contents flex-row">
+        <div class="flex-column">
+            <div class="flex-row input-container">
+                <label for="find-mtn"></label>
+                <input id="find-mtn" type="text" name="findMtn" placeholder="산명을 입력해주세요">
+                <button class="positive-btn" style="width: 100px" onclick="setMountain()">검색하기</button>
+            </div>
 
-    <div class="main-contents flex-column">
-        <h1>Mountain View</h1>
-        <div id="map" style="width:700px;height:400px;"></div>
+            <div id="map" style="width:800px;height:500px;"></div>
+        </div>
+
+        <div class="list-view flex-column">
+            List view 입니다
+            <div class="list-view-card">
+                산의 정보가 들어갈 카드입니다람쥐
+            </div>
+            <div class="list-view-card">
+                산의 정보가 들어갈 카드입니다람쥐
+            </div>
+            <div class="list-view-card">
+                산의 정보가 들어갈 카드입니다람쥐
+            </div>
+        </div>
     </div>
 </div>
-
 <script src="/static/js/map.js"></script>
 <script src="/static/js/script.js"></script>
 

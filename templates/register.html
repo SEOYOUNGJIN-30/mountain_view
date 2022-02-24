@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko">
+<html lang="ko" color-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -22,14 +22,15 @@
 
 <div class="main-container flex-row">
     <div class="side-navi flex-column">
+        <a href="/" class="logo">MountainView</a>
         <div class="flex-row">
-            목록 첫번째
+            근처 산 찾기
         </div>
         <div class="flex-row">
-            목록 두번째
+            지역별 산 찾기(드롭다운)
         </div>
         <div class="flex-row">
-            목록 세번째
+            마이페이지
         </div>
     </div>
 
@@ -40,13 +41,11 @@
             <div class="login-form">
                 <div class="flex-row">
                 <div class="input-box" style="width: 80%">
-                    <input id="userId" type="text" name="userId" placeholder="아이디" required>
+                    <input id="userId" type="text" name="userId" placeholder="아이디" onblur="checkId()" required>
                     <label for="userId">아이디</label>
                 </div>
-                <button class="btn-sm negative-btn" onclick="checkId()">중복 확인</button>
                 </div>
                 <div class="register-text flex-row" id="checkDuplicate">
-                    <span>아이디 중복확인 완료</span>
                 </div>
 
                 <div class="input-box">
@@ -57,7 +56,7 @@
                     <input id="checkPassword" type="password" name="checkPassword" placeholder="비밀번호 확인">
                     <label for="checkPassword">비밀번호 확인</label>
                 </div>
-                <button class="btn-sm negative-btn" onclick="checkPassword()">비밀번호 확인</button>
+<!--                <button class="btn-sm negative-btn" onclick="checkPassword()">비밀번호 확인</button>-->
 
                 <div class="register-text flex-column" id="checkSamePassword">
                     <span>비밀번호가 일치합니다.</span>

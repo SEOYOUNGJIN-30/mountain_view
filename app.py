@@ -1,10 +1,13 @@
 from flask import Flask, render_template, request, jsonify
 from pymongo import MongoClient
+import certifi
+
+#SSL: CERTIFICATE_VERIFY_FAILED 에러 때문에 넣음
+ca = certifi.where()
+client = MongoClient('mongodb+srv://lnuvy:1234@cluster-lnuvy.cnhmb.mongodb.net/', tlsCAFile=ca)
+db = client.dbsparta
 
 app = Flask(__name__)
-
-client = MongoClient("mongodb+srv://lnuvy:1234@cluster-lnuvy.cnhmb.mongodb.net/")
-db = client.dbsparta
 
 
 @app.route('/test')
