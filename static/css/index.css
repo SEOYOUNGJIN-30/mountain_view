@@ -32,6 +32,10 @@ a {
     color: var(--color);
 }
 
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color);
+}
+
 .main-container {
     width: 100vw;
     height: 100vh;
@@ -48,10 +52,24 @@ a {
     align-items: center;
 }
 
+.flex-column-start {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
 .flex-row {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
+}
+
+.flex-row-start{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
     align-items: center;
 }
 
@@ -98,6 +116,12 @@ button {
     font-size: 12px!important;
 }
 
+.btn-40-40 {
+    width: 40px!important;
+    height: 40px!important;
+    font-size: 12px!important;
+}
+
 button:hover {
     font-size: 22px;
     font-weight: bold;
@@ -134,7 +158,10 @@ button:hover {
 
     position: absolute;
     top: 50px;
-}
+    transition: 0.05s;
+}.logo:hover {
+    font-size: 42px;
+ }
 
 .input-container {
     max-width: 600px;
@@ -166,4 +193,21 @@ button:hover {
 .list-view-card {
     margin: 30px 0;
     border: 1px solid red;
+}
+
+.content-card {
+    position: relative;
+    box-shadow: 0 0 4px gray;
+    max-width: 300px;
+    width: 100%;
+
+    margin: 15px 0;
+    padding: 10px 10px;
+
+    color: var(--color);
+}
+
+.content-icon {
+    position: absolute;
+    right: 10px;
 }

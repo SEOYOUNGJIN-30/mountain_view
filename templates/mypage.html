@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ko" color-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MountainView</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Dongle&family=Poor+Story&display=swap" rel="stylesheet">
+
+    <!--    CSS -->
+    <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="stylesheet" href="/static/css/mypage.css">
+    <link rel="stylesheet" href="/static/css/login.css">
+    <!--    Jquery -->
+    <script src="/static/js/jquery-3.6.0.min.js"></script>
+    <!--    Kakao Map -->
+    <script type="text/javascript"
+            src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0d9d093d51b30a990dd9be3a96f630ff&libraries=services,clusterer,drawing"></script>
+</head>
+<body>
+<div class="main-container flex-row">
+    <div class="side-navi flex-column">
+        <a href="/" class="logo">MountainView</a>
+        <div class="flex-row">
+            근처 산 찾기
+        </div>
+        <div class="flex-row">
+            지역별 산 찾기(드롭다운)
+        </div>
+        <div class="flex-row">
+            <a href="/mypage">마이페이지</a>
+        </div>
+        <a href="login">
+            <button class="positive-btn">로그인</button>
+        </a>
+    </div>
+    <div class="main-contents flex-row">
+        <div class="flex-column mypage-container">
+            <h1>회원정보수정</h1>
+            <div class="input-box">
+                <input id="userId" type="text" name="userId" placeholder="아이디" onblur="checkId()" required>
+                <label for="userId">아이디</label>
+            </div>
+            <div class="register-text flex-row" id="checkDuplicate">
+            </div>
+            <div class="input-box">
+                <input id="userPassword" type="password" name="userPassword" placeholder="비밀번호">
+                <label for="userPassword">비밀번호</label>
+            </div>
+            <div class="input-box">
+                <input id="checkPassword" type="password" name="checkPassword" placeholder="비밀번호 확인">
+                <label for="checkPassword">비밀번호 확인</label>
+            </div>
+            <div class="register-text flex-column" id="checkSamePassword">
+            </div>
+            <div class="input-box">
+                <input id="userAge" type="number" name="userAge" placeholder="나이" required>
+                <label for="userAge">나이</label>
+            </div>
+            <div class="input-box">
+                <input id="userNickname" type="text" name="userNickname" placeholder="닉네임" required>
+                <label for="userNickname">닉네임</label>
+            </div>
+            <button class="positive-btn" style="margin-top: 20px">회원정보수정</button>
+        </div>
+        <div class="flex-column mypage-container" style="justify-content: start!important;">
+            <h1>내가 쓴 댓글</h1>
+            <div class="content-card flex-row-start">
+                <div class="flex-column-start">
+                    <h3>댓글제목</h3>
+                    <div class="comment">댓글내용입니다람쥐</div>
+                </div>
+                <button class="negative-btn btn-40-40 content-icon">삭제</button>
+            </div>
+            <div class="content-card flex-row-start">
+                <div class="flex-column-start">
+                    <h3>댓글제목</h3>
+                    <div class="comment">댓글내용입니다람쥐</div>
+                </div>
+                <button class="negative-btn btn-40-40 content-icon">삭제</button>
+            </div><div class="content-card flex-row-start">
+                <div class="flex-column-start">
+                    <h3>댓글제목</h3>
+                    <div class="comment">댓글내용입니다람쥐</div>
+                </div>
+                <button class="negative-btn btn-40-40 content-icon">삭제</button>
+            </div>
+            <div class="content-card flex-row-start">
+                <div class="flex-column-start">
+                    <h3>댓글제목</h3>
+                    <div class="comment">댓글내용입니다람쥐</div>
+                </div>
+                <button class="negative-btn btn-40-40 content-icon">삭제</button>
+            </div>
+            <div class="content-card flex-row-start">
+                <div class="flex-column-start">
+                    <h3>댓글제목</h3>
+                    <div class="comment">댓글내용입니다람쥐</div>
+                </div>
+                <button class="negative-btn btn-40-40 content-icon">삭제</button>
+            </div>
+            <div class="content-card flex-row-start">
+                <div class="flex-column-start">
+                    <h3>댓글제목</h3>
+                    <div class="comment">댓글내용입니다람쥐</div>
+                </div>
+                <button class="negative-btn btn-40-40 content-icon">삭제</button>
+            </div>
+
+        </div>
+        <div class="flex-column mypage-container" style="justify-content: start!important;">
+            <h1>즐겨찾기</h1>
+            <div class="content-card flex-row-start">
+                <div class="flex-column-start">
+                    <h3>산이름</h3>
+                    <div class="comment">산주소</div>
+                </div>
+                <button class="positive-btn btn-40-40 content-icon">지도</button>
+            </div>
+            <div class="content-card flex-row-start">
+                <div class="flex-column-start">
+                    <h3>산이름</h3>
+                    <div class="comment">산주소</div>
+                </div>
+                <button class="positive-btn btn-40-40 content-icon">지도</button>
+            </div>
+            <div class="content-card flex-row-start">
+                <div class="flex-column-start">
+                    <h3>산이름</h3>
+                    <div class="comment">산주소</div>
+                </div>
+                <button class="positive-btn btn-40-40 content-icon">지도</button>
+            </div>
+            <div class="content-card flex-row-start">
+                <div class="flex-column-start">
+                    <h3>산이름</h3>
+                    <div class="comment">산주소</div>
+                </div>
+                <button class="positive-btn btn-40-40 content-icon">지도</button>
+            </div>
+            <div class="content-card flex-row-start">
+                <div class="flex-column-start">
+                    <h3>산이름</h3>
+                    <div class="comment">산주소</div>
+                </div>
+                <button class="positive-btn btn-40-40 content-icon">지도</button>
+            </div>
+            <div class="content-card flex-row-start">
+                <div class="flex-column-start">
+                    <h3>산이름</h3>
+                    <div class="comment">산주소</div>
+                </div>
+                <button class="positive-btn btn-40-40 content-icon">지도</button>
+            </div>
+            <div class="content-card flex-row-start">
+                <div class="flex-column-start">
+                    <h3>산이름</h3>
+                    <div class="comment">산주소</div>
+                </div>
+                <button class="positive-btn btn-40-40 content-icon">지도</button>
+            </div>
+            <div class="content-card flex-row-start">
+                <div class="flex-column-start">
+                    <h3>산이름</h3>
+                    <div class="comment">산주소</div>
+                </div>
+                <button class="positive-btn btn-40-40 content-icon">지도</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="/static/js/script.js"></script>
+
+</body>
+</html>

@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>마운틴뷰 회원가입</title>
-        <link href="https://fonts.googleapis.com/css2?family=Dongle&family=Poor+Story&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dongle&family=Poor+Story&display=swap" rel="stylesheet">
 
     <!--    CSS -->
     <link rel="stylesheet" href="/static/css/index.css">
@@ -14,7 +14,7 @@
     <!--    Jquery -->
     <script src="/static/js/jquery-3.6.0.min.js"></script>
 
-<!--    script -->
+    <!--    script -->
     <script src="/static/js/register.js"></script>
     <script src="/static/js/script.js"></script>
 </head>
@@ -39,11 +39,9 @@
             <h1>Register</h1>
             <br>
             <div class="login-form">
-                <div class="flex-row">
-                <div class="input-box" style="width: 80%">
+                <div class="input-box">
                     <input id="userId" type="text" name="userId" placeholder="아이디" onblur="checkId()" required>
                     <label for="userId">아이디</label>
-                </div>
                 </div>
                 <div class="register-text flex-row" id="checkDuplicate">
                 </div>
@@ -56,7 +54,7 @@
                     <input id="checkPassword" type="password" name="checkPassword" placeholder="비밀번호 확인">
                     <label for="checkPassword">비밀번호 확인</label>
                 </div>
-<!--                <button class="btn-sm negative-btn" onclick="checkPassword()">비밀번호 확인</button>-->
+                <!--                <button class="btn-sm negative-btn" onclick="checkPassword()">비밀번호 확인</button>-->
 
                 <div class="register-text flex-column" id="checkSamePassword">
                     <span>비밀번호가 일치합니다.</span>

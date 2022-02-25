@@ -35,6 +35,10 @@ def register():
 def mountainInfo():
     return render_template('mountainInfo.html')
 
+@app.route('/mypage')
+def mypage():
+    return render_template('mypage.html')
+
 
 # ---------- Ajax 요청 ---------- #
 # 아이디 중복체크
