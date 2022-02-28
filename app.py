@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 from pymongo import MongoClient
+from bson.objectid import ObjectId
 import certifi
 
 #SSL: CERTIFICATE_VERIFY_FAILED 에러 때문에 넣음
@@ -69,6 +70,15 @@ def registerUser():
     }
     db.users.insert_one(doc)
     return jsonify({'msg': '회원가입 완료'})
+
+# 산 정보 요청(임시-권영민)
+@app.route("/getMountain", methods=["POST"])
+def movie_get():
+    mountain_name = request.form['name']
+    mountain_list = list(db.tests.find({'name':mountain_name}))
+    for m in mountain_list:
+        m['_id'] = str(m['_id'])
+    return jsonify({'mountains': mountain_list})
 
 if __name__ == '__main__':
     app.run('0.0.0.0', port=5000, debug=True)

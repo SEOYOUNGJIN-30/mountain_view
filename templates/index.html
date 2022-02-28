@@ -41,21 +41,14 @@
                 <input id="find-mtn" type="text" name="findMtn" placeholder="산명을 입력해주세요">
                 <button class="positive-btn" style="width: 100px" onclick="setMountain()">검색하기</button>
             </div>
-
-            <div id="map" style="width:800px;height:500px;"></div>
+            <div class="map-wrap">
+                <div id="map"></div>
+                <button id="my-position-btn" class="positive-btn btn-40-40" onclick="setMyPosition()">내 위치</button>
+            </div>
         </div>
 
-        <div class="list-view flex-column">
-            List view 입니다
-            <div class="list-view-card">
-                산의 정보가 들어갈 카드입니다람쥐
-            </div>
-            <div class="list-view-card">
-                산의 정보가 들어갈 카드입니다람쥐
-            </div>
-            <div class="list-view-card">
-                산의 정보가 들어갈 카드입니다람쥐
-            </div>
+        <div id="mountain-list" class="flex-column list-container" style="justify-content: start!important; height: 70vh!important;">
+            <h1>검색 결과</h1>
         </div>
     </div>
 </div>

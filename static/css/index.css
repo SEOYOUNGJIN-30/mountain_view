@@ -66,7 +66,7 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
 }
 
-.flex-row-start{
+.flex-row-start {
     display: flex;
     flex-direction: row;
     justify-content: start;
@@ -111,15 +111,15 @@ button {
 }
 
 .button-100-40 {
-    width: 100px!important;
-    height: 40px!important;
-    font-size: 12px!important;
+    width: 100px !important;
+    height: 40px !important;
+    font-size: 12px !important;
 }
 
 .btn-40-40 {
-    width: 40px!important;
-    height: 40px!important;
-    font-size: 12px!important;
+    width: 40px !important;
+    height: 40px !important;
+    font-size: 12px !important;
 }
 
 button:hover {
@@ -144,8 +144,28 @@ button:hover {
     background-color: red;
 }
 
-#map {
+.map-wrap {
+    position: relative;
+    overflow: hidden;
     box-shadow: 0 0 4px 0 black;
+
+    margin-right: 60px;
+}
+
+#map {
+    position: relative;
+    width: 800px;
+    height: 500px;
+    overflow: hidden;
+
+    z-index: 0;
+}
+
+#my-position-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1
 }
 
 .logo {
@@ -159,9 +179,11 @@ button:hover {
     position: absolute;
     top: 50px;
     transition: 0.05s;
-}.logo:hover {
+}
+
+.logo:hover {
     font-size: 42px;
- }
+}
 
 .input-container {
     max-width: 600px;
@@ -181,20 +203,6 @@ button:hover {
     border-bottom: 1px solid var(--color);
 }
 
-.list-view {
-    max-width: 600px;
-    width: 100%;
-
-    margin-left: 100px;
-
-    border: 1px solid black;
-}
-
-.list-view-card {
-    margin: 30px 0;
-    border: 1px solid red;
-}
-
 .content-card {
     position: relative;
     box-shadow: 0 0 4px gray;
@@ -210,4 +218,25 @@ button:hover {
 .content-icon {
     position: absolute;
     right: 10px;
+}
+
+.list-container {
+    max-width: 400px;
+    width: 80%;
+    height: 60vh;
+    padding: 30px 0;
+    margin: 0 20px;
+    box-shadow: 0 0 4px gray;
+
+    overflow-y: scroll;
+}
+
+.list-container > .input-box {
+    max-width: 250px;
+    width: 100%;
+}
+
+.info-window {
+    width: 150px;
+    height: 50px;
 }
